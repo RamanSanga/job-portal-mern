@@ -5,11 +5,12 @@ cloudinary.v2.config({
     api_key:process.env.CLOUDINARY_CLIENT_API,
     api_secret:process.env.CLOUDINARY_CLIENT_SECRET,
 })
+const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
   res.send("Backend is running! Visit /api/v1/jobs to see jobs.");
 });
 
-app.listen(process.env.PORT,()=>{
+app.listen(PORT,()=>{
     console.log(`Server running on port ${process.env.PORT}`);
 });
